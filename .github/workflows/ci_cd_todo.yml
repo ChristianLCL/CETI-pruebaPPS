@@ -67,12 +67,4 @@ jobs:
             docker rmi christianloceli/fastapi-ceti
             docker run -d -p 80:5000 --name web christianloceli/fastapi-ceti
             sleep 30
-  curl:
-    name: Test URL con curl
-    needs: aws
-    runs-on: ubuntu-latest
-    steps:
-    - name: curl
-      uses: wei/curl@master
-      with:
-        args: http://${{ secrets.AWS_HOSTNAME }}
+

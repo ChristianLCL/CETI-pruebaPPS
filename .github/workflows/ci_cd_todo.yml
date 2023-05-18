@@ -78,5 +78,5 @@ jobs:
       - name: Check HTTP status of production site
         uses: ./
         with:
-          sites: '["http://ec2-34-202-224-190.compute-1.amazonaws.com/students/", "http://ec2-34-202-224-190.compute-1.amazonaws.com/docs/"]'
-          expected: '[301, 200]'
+          sites: '["http://ec2-34-202-224-190.compute-1.amazonaws.com/","http://ec2-34-202-224-190.compute-1.amazonaws.com/students/", "http://ec2-34-202-224-190.compute-1.amazonaws.com/docs/"]'
+          expected: '[404, 405, 200]'

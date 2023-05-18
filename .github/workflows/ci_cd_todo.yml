@@ -68,3 +68,14 @@ jobs:
             docker run -d -p 80:8000 --name web christianloceli/fastapi-ceti
             sleep 30
 
+  lakuapik:
+    name: HTTP Status
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v1
+      - name: Check HTTP status of production site
+        uses: ./
+        with:
+          sites: '["http://ec2-34-202-224-190.compute-1.amazonaws.com/students/", "http://ec2-34-202-224-190.compute-1.amazonaws.com/docs/"]'
+          expected: '[301, 200]

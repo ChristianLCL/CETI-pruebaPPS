@@ -78,4 +78,4 @@ jobs:
       uses: lakuapik/gh-actions-http-status@v1
       with:
           sites: '["http://ec2-34-202-224-190.compute-1.amazonaws.com/","http://ec2-34-202-224-190.compute-1.amazonaws.com/students/", "http://ec2-34-202-224-190.compute-1.amazonaws.com/docs/"]'
-          expected: '[404, 405, 200]'
+          expected: '[404, 200, 307]'

@@ -21,6 +21,8 @@ jobs:
       - name: Set up Python environment
         uses: actions/setup-python@v4
         with:
-          python-version: "3.11"
+          python-version: "3.11"          
+      - name: Install dependencies
+        run: pip install flake8
       - name: Run flake8
         run: flake8 --ignore=W291 .

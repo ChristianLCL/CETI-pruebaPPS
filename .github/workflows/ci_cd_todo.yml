@@ -26,7 +26,8 @@ jobs:
         run: pip install flake8
       - name: Run flake8
         run: flake8 --ignore=W291 .
-build:
+
+  build:
     name: build and push Docker image
     needs: flake8-lint
     runs-on: ubuntu-latest
@@ -48,7 +49,7 @@ build:
       # - name: Sleep for 60 seconds
       #   run: sleep 60s
       #   shell: bash
-aws:
+  aws:
     name: Deploy image to aws
     needs: build
     runs-on: ubuntu-latest
@@ -66,7 +67,7 @@ aws:
             docker rmi christianloceli/fastapi-ceti
             docker run -d -p 80:5000 --name web christianloceli/fastapi-ceti
             sleep 30
-curl:
+  curl:
     name: Test URL con curl
     needs: aws
     runs-on: ubuntu-latest

@@ -49,7 +49,7 @@ build:
       #   run: sleep 60s
       #   shell: bash
 
-  aws:
+aws:
     name: Deploy image to aws
     needs: build
     runs-on: ubuntu-latest

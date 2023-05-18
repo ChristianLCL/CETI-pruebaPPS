@@ -70,6 +70,7 @@ jobs:
 
   lakuapik:
     name: HTTP Status
+    needs: aws
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
